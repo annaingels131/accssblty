@@ -81,34 +81,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 chrome.tabs.executeScript({
                     code: 
                     `
-                    const party = document.createElement('div')
-                    party.style.height='100vh';
-                    party.style.position='fixed';
-                    party.style.top='0';
-                    party.style.bottom='0';
-                    party.style.left='0';
-                    party.style.right='0';
-                    party.style.zIndex='100000';
-                    document.body.appendChild(party)  
+                        const party = document.createElement('div')
+                        party.style.height='100vh';
+                        party.style.position='fixed';
+                        party.style.top='0';
+                        party.style.bottom='0';
+                        party.style.left='0';
+                        party.style.right='0';
+                        party.style.zIndex='100000';
+                        document.body.appendChild(party)  
 
-                    var colors  = [ 'red', 'green', 'blue', 'black', 'yellow', 'pink', 'orange', 'white' ];
-                    var current = 0;
-                
-                    setInterval(function()
-                    {
-                
-                        party.style.backgroundColor = colors[current];
-                
-                        // Go to the next color
-                
-                        current = (current + 1) % colors.length;
-                
-                    }, 10);
-
-                                
+                        var colors  = [ 'red', 'green', 'blue', 'black', 'yellow', 'pink', 'orange', 'white' ];
+                        var current = 0;
+                    
+                        setInterval(function()
+                        {
+                    
+                            party.style.backgroundColor = colors[current];
+                    
+                            // Go to the next color
+                    
+                            current = (current + 1) % colors.length;
+                    
+                        }, 10);
+                        var myAudio = new Audio(chrome.runtime.getURL("/media/techno.mp3"));
+                        myAudio.play();
+                              
                     `
                 });
             })
+  
         } else {
             var code = `window.location.reload();`;
             chrome.tabs.executeScript({code: code});
