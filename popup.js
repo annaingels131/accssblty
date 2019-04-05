@@ -135,8 +135,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 chrome.tabs.executeScript({
                     code:
                     `
-                    var myAudio = new Audio(chrome.runtime.getURL("/media/john_cena.mp3"));
-                    myAudio.play();
+                   var div = document.createElement('div');
+                    document.body.appendChild(div);
+                    div.className = 'shia-do-it';
+                    div.style.cssText = ('position: fixed; bottom: 0px; top: 0px; right: 0px; z-index: 99999; left: 0px; height: 530px; width: 720px; pointer-events: none;');
+                    div.innerHTML = '<div class="shia-do-it--container" style="width: 100vw; overflow:hidden; display:block; height: 100vh;"><video width="100%" height="100%" style="max-width: none; padding: 0;" name="media"><source type="video/webm"></video></div>';
+                    var video = document.querySelector('.shia-do-it .shia-do-it--container video');
+                    video.style.visibility = "hidden";
+                    video.src = chrome.extension.getURL("/media/cena.mp4");
+                    video.load();
+                    video.addEventListener('loadeddata', function() {
+                        video.style.visibility = "visible";
+                        video.play();
+                    }, false);
+                    video.onerror = function() {
+                        alert("Couldnt load Shia :( Try another page.");
+                    };
+
                     `
                 });
             })
