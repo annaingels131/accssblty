@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
             black.style.top='0';
             black.style.bottom='0';
             black.style.left='0';
-            black.style.right='0';
+            black.style.right='0';            
+            black.style.zIndex='100000';
             black.textContent = 'hey';
             document.body.appendChild(black)`
           });
@@ -53,7 +54,21 @@ document.addEventListener('DOMContentLoaded', function() {
     var nightMode = document.getElementById('partyMode');
     nightMode.addEventListener('click', function() {
         chrome.tabs.getSelected(null, function(tab) {
-            alert('party')
+            chrome.tabs.executeScript({
+                code: 
+                `
+                const party = document.createElement('div')
+                party.style.backgroundColor='red';
+                party.style.height='100vh';
+                party.style.position='absolute';
+                party.style.top='0';
+                party.style.bottom='0';
+                party.style.left='0';
+                party.style.right='0';
+                party.textContent = 'hey';
+                document.body.appendChild(party)                
+                `
+            });
         })
     })
 })
