@@ -1,0 +1,15 @@
+{
+    “manifest_version”: 2,
+    “name”: “accssblty”,
+    “description”: “Modes to make your browsing experience more accessible”,
+    “version”: “1”,
+    “author”: “Anna Ingels, Maria Espinoza, and David Ramirez”,
+   "browser_action": {
+      "default_icon": "",
+      “default_title”: “access”
+    },
+   “chrome_url_overrides” : {
+     “newtab”: “access.html”
+   },
+    “permissions”: [“activeTab”]
+}
