@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     current = (current + 1) % colors.length;
             
                 }, 10);
-
+            var myAudio = new Audio(chrome.runtime.getURL("/media/techno.mp3"));
+            myAudio.play();
                               
                 `
             });
