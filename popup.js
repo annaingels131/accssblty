@@ -142,6 +142,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 })
+ 
+// images[i].src = 'https://scontent-lax3-2.cdninstagram.com/vp/4349670b093e930b423a51c14cb5f477/5D47905C/t51.2885-19/s320x320/14553139_348682372156995_3472138324720746496_a.jpg?_nc_ht=scontent-lax3-2.cdninstagram.com';
+
 
 document.addEventListener('DOMContentLoaded', function() {
     let clicked = false;
@@ -155,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 code:
                 `var images = document.getElementsByTagName('img');
                     for (var i = 0, l = images.length; i < l; i++) {
-                        images[i].src = 'https://scontent-lax3-2.cdninstagram.com/vp/4349670b093e930b423a51c14cb5f477/5D47905C/t51.2885-19/s320x320/14553139_348682372156995_3472138324720746496_a.jpg?_nc_ht=scontent-lax3-2.cdninstagram.com';
+                        images[i].src = 'http://placekitten.com/' + images[i].width + '/' + images[i].height;
                     }`
                 });
             })
