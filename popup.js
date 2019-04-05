@@ -60,7 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 `var r = true;
                 
                 while (r) {
-                    r = confirm("MOVE!");
+                    if(confirm("MOVE!")){
+                        r = false;
+                    }else {
+                        r = true;
+                    }
                 }`
                 });
             })
