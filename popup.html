@@ -4,31 +4,69 @@
     <title>Test</title>
     <script src="popup.js"></script>
     <style>
-        .popup {
-            height: 200px;
-            width: 300px;
-        }
-
         h1 {
             text-align: center;
         }
 
-        li {
-            list-style-type: none;
-            padding: 20px;
+        p {
+            font-size: 20px;
+        }
+
+        button {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 95%;
+            display: flex;
+            margin: 10px;
+            border-radius: 20px;
+        }
+
+        #nightMode {
+            background-color: #1351b5;
+            color: #fff;
+        }
+
+        #seniorMode {
+            background-color: #824813;
+            color: #fff;
+        }
+
+        #moveitMode {
+            background-color: #24e81e;
+            color: #fff;
+        }
+
+        #partyMode {
+            background-color: #f67fff;
+            color: #fff;
+        }
+
+        #miguelMode {
+            background-color: #ed3417;
+            color: #fff;
+        }
+
+        .emoji {
+            font-size: 35px;
+        }
+
+        .popup {
+            height: 200px;
+            width: 300px;
         }
     </style>
 </head>
 <body class='popup'>
     <div>
-        <h1>Choose your mode</h1>
-        <ul>
-            <button id="nightMode">Night Mode</button>
-            <button id="seniorMode">Senior Mode</button>
-            <button id="moveitMode">Move it Mode</button>
-            <button id="partyMode">Party Mode</button>
-            <button id="miguelMode">Miguel Mode</button>
-        </ul>
+        <h1>CHOOSE YOUR MODE</h1>
+        <div>
+            <button id="nightMode"><p class='emoji'>&#x1F319</p><p>Night Mode</p></button>
+            <button id="seniorMode"><p class='emoji'>&#x1F474</p><p>Senior Mode</p></button>
+            <button id="moveitMode"><p class='emoji'>&#x1F3C3</p><p>Move it Mode</p></button>
+            <button id="partyMode"><p class='emoji'>&#x1F389</p><p>Party Mode</p></button>
+            <button id="miguelMode"><p class='emoji'>&#x1F468</p><p>Miguel Mode</p></button>
+        </div>
     </div>
 </body>
 </html>
