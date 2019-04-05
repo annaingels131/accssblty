@@ -74,10 +74,17 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 document.addEventListener('DOMContentLoaded', function() {
-    var nightMode = document.getElementById('miguelMode');
-    nightMode.addEventListener('click', function() {
-        chrome.tabs.getSelected(null, function(tab) {
-            alert('Miguel')
-        })
-    })
+    document.getElementById('miguelMode').addEventListener('click', onclick, false)
+    function onclick () {
+      chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
+        // chrome.tabs.sendMessage(tabs[0].id, 'hi', setCount)
+        chrome.tabs.executeScript({
+           code:
+           `var images = document.getElementsByTagName('img');
+            for (var i = 0, l = images.length; i < l; i++) {
+                images[i].src = 'https://scontent-lax3-2.cdninstagram.com/vp/4349670b093e930b423a51c14cb5f477/5D47905C/t51.2885-19/s320x320/14553139_348682372156995_3472138324720746496_a.jpg?_nc_ht=scontent-lax3-2.cdninstagram.com';
+            }`
+          });
+      })
+    }
 })
