@@ -1,9 +1,77 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <title>Test</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
+    <script src="popup.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        button {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 95%;
+            display: flex;
+            margin: 10px;
+            border-radius: 20px;
+            color: #fff;
+        }
+
+        #nightMode {
+            background-color: #1351b5;
+        }
+
+        #seniorMode {
+            background-color: #f4dc42;
+        }
+
+        #moveitMode {
+            background-color: #24e81e;
+        }
+
+        #partyMode {
+            background-color: #f918df;
+        }
+
+        #miguelMode {
+            background-color: #6af2dd;
+        }
+
+        #doItMode {
+            background-color: #000;
+        }
+
+        #johnCenaMode {
+            background-color: #4db213;
+        }
+
+        .emoji {
+            font-size: 35px;
+        }
+
+        .popup {
+            height: 200px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body class='popup'>
+    <div>
+        <h1>CHOOSE YOUR MODE</h1>
+        <div>
+            <button id="nightMode"><p class='emoji'>&#x1F319</p><p>Night Mode</p></button>
+            <button id="seniorMode"><p class='emoji'>&#x1F474</p><p>Senior Mode</p></button>
+            <button id="partyMode"><p class='emoji'>&#x1F389</p><p>Party Mode</p></button>
+            <button id="miguelMode"><p class='emoji'>&#x1F431</p><p>Kitten Mode</p></button>
+            <button id="doItMode"><p class='emoji'>&#x2714</p><p>Do it Mode</p></button>
+            <button id="johnCenaMode"><p class='emoji'>&#x1F4AA</p><p>John Cena Mode</p></button>
+        </div>
+    </div>
+</body>
 </html>
