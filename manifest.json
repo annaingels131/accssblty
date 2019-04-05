@@ -5,8 +5,7 @@
     "version": "1",
     "author": "Anna Ingels, Maria Espinoza, and David Ramirez",
    "browser_action": {
-      "default_popup": "popup.htm",
-      "default_icon": "",
+      "default_popup": "popup.html",
       "default_title": "access"
     }
 }
