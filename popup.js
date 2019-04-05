@@ -58,15 +58,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 code: 
                 `
                 const party = document.createElement('div')
-                party.style.backgroundColor='red';
                 party.style.height='100vh';
-                party.style.position='absolute';
+                party.style.position='fixed';
                 party.style.top='0';
                 party.style.bottom='0';
                 party.style.left='0';
                 party.style.right='0';
-                party.textContent = 'hey';
-                document.body.appendChild(party)                
+                party.style.zIndex='100000';
+                document.body.appendChild(party)  
+
+                var colors  = [ 'red', 'green', 'blue', 'black', 'yellow', 'pink', 'orange', 'white' ];
+                var current = 0;
+            
+                setInterval(function()
+                {
+            
+                    party.style.backgroundColor = colors[current];
+            
+                    // Go to the next color
+            
+                    current = (current + 1) % colors.length;
+            
+                }, 10);
+
+                              
                 `
             });
         })
