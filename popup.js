@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var nightMode = document.getElementById('nightMode');
-    nightMode.addEventListener('click', function() {
-        chrome.tabs.getSelected(null, function(tab) {
-            alert('night')
-        })
-    })
+    document.getElementById('nightMode').addEventListener('click', onclick, false)
+    function onclick () {
+      chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, 'hi')
+      })
+    }   
 })
 
 document.addEventListener('DOMContentLoaded', function() {
