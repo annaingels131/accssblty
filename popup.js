@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             code: `const black = document.createElement('div')
             black.style.backgroundColor='black';
             black.style.height='100vh';
-            black.style.position='absolute';
+            black.style.position='fixed';
             black.style.top='0';
             black.style.bottom='0';
             black.style.left='0';
